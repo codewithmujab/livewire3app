@@ -17,6 +17,6 @@ Route::middleware([
 });
 
 // counter
-Route::get('/counter', App\Livewire\Counter::class);
+Route::get('/counter', App\Livewire\Counter::class)->name('counter.index');
 //post
 Route::get('/posts', App\Livewire\Posts\CreatePost::class)->name('posts.index');

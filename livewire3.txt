@@ -18,14 +18,22 @@ Powergrid Datatable
 ___________________
 php artisan powergrid:create
 
+php artisan livewire:form PostForm
+
 
 wire
 _____
 wire:model
 wire:model.live (realtime)
+wire:model.blur
 wire:loading
 wire:submit
 wire:confirm
 wire:click
 wire:loading.attr
 wire:keydown.enter
+wire:dirty.class
+wire:navigate (SPA)
+wire:navigate.hover
+wire:offline
+wire:offline.class
