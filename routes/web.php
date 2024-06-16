@@ -15,3 +15,8 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+// counter
+Route::get('/counter', App\Livewire\Counter::class);
+//post
+Route::get('/posts', App\Livewire\Posts\CreatePost::class)->name('posts.index');

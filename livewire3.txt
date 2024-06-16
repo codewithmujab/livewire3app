@@ -1,0 +1,31 @@
+php artisan make:livewire CreatePost / php artisan make:livewire create-post
+
+subdirektori Posts
+__________________
+php artisan make:livewire Posts\\CreatePost
+php artisan make:livewire posts.create-post
+
+layout
+______
+php artisan livewire:layout
+
+inline component
+____________ 
+php artisan make:livewire CreatePost --inline
+
+
+Powergrid Datatable
+___________________
+php artisan powergrid:create
+
+
+wire
+_____
+wire:model
+wire:model.live (realtime)
+wire:loading
+wire:submit
+wire:confirm
+wire:click
+wire:loading.attr
+wire:keydown.enter
