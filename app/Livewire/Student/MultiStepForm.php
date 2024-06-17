@@ -5,11 +5,13 @@ namespace App\Livewire\Student;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\Student;
+// use Livewire\Attributes\Locked;
 
 class MultiStepForm extends Component
 {
     use WithFileUploads;
 
+    // #[Locked] = ini khusus buat id
     public $first_name;
     public $last_name;
     public $gender;

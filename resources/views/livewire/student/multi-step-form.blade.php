@@ -1,6 +1,6 @@
 <div>
 
-    <form wire:submit.prevent="register">
+    <form wire:submit="register">
 
         {{-- STEP 1 --}}
 
@@ -39,10 +39,25 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Gender</label>
+                                    {{-- static --}}
                                     <select class="form-control" wire:model="gender">
                                         <option value="" selected>Choose gender</option>
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
+                                    </select>
+                                    {{-- dinamic --}}
+                                    <select wire:model="state">
+                                        <option disabled>Select a post...</option>
+
+                                        @foreach (\App\Models\Post::all() as $state)
+                                            <option value="{{ $state->id }}">{{ $state->title }}</option>
+                                        @endforeach
+                                    </select>
+                                    {{-- multiple --}}
+                                    <select wire:model="states" multiple>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
                                     </select>
                                     <span class="text-red-500">
                                         @error('gender')
@@ -161,7 +176,8 @@
                         nemo veritatis delectus quia?
                         <div class="frameworks d-flex flex-column align-items-left mt-2">
                             <label for="laravel">
-                                <input type="checkbox" id="laravel" value="laravel" wire:model="frameworks"> Laravel
+                                <input type="checkbox" id="laravel" value="laravel" wire:model="frameworks">
+                                Laravel
                             </label>
                             <label for="codeigniter">
                                 <input type="checkbox" id="codeigniter" value="codeigniter" wire:model="frameworks">

@@ -23,3 +23,6 @@ Route::get('/posts', App\Livewire\Posts\CreatePost::class)->name('posts.index');
 
 //multi step form
 Route::view('/registration-success', 'registration-success')->name('registration.success');
+
+//dropdown
+Route::get('/select/actors-and-best-films', \App\Livewire\SelectActors::class)->name('select.actors');

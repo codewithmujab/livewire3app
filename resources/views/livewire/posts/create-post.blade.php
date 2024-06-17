@@ -36,6 +36,7 @@
 
     @forelse ($posts as $post)
         <div wire:key="{{ $post->id }}">
+            {{--  <livewire:show-post :$post :key="$post->id" />  --}}
             {{-- data --}}
             <span class="font-bold text-blue-500">{{ $post->title }}</span> <br />
             {{ $post->content }} <br />
@@ -43,7 +44,7 @@
             <br />
             @if (Auth::user()->email == 'saefulmujab300@gmail.com')
                 <button type="button" class="text-red-500 underline" wire:click="deletePost({{ $post->id }})"
-                    wire:confirm="Are you sure you want to delete this post?">
+                    wire:confirm.prompt="YAKIN AKAN MENGHAPUS INI?\n\nKetik YA untuk benar menghapus.|YA">
                     Delete
                 </button>
             @endif

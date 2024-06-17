@@ -21,19 +21,42 @@ php artisan powergrid:create
 php artisan livewire:form PostForm
 
 
-wire
+wire in livewire3
 _____
 wire:model
 wire:model.live (realtime)
+wire:model.live.throttle.150ms
+wire:model.live.debounce.250ms
 wire:model.blur
+wire:model.change
 wire:loading
-wire:submit
+wire:loading.remove
+wire:loading.class
+wire:loading.class.remove
+wire:loading.attr
+wire:loading wire:target
+wire:loading.delay.shortest =50ms
+wire:submit = Livewire secara otomatis meneleponpreventDefault()
 wire:confirm
+wire:confirm.prompt
 wire:click
+wire:click.prevent
 wire:loading.attr
 wire:keydown.enter
+wire:dirty
 wire:dirty.class
+wire:dirty.remove
 wire:navigate (SPA)
-wire:navigate.hover
+wire:navigate.hover = Livewire akan mengambil halaman terlebih dahulu saat pengguna mengarahkan kursor ke link
 wire:offline
 wire:offline.class
+wire:transition
+wire:poll = realtime alih alih websoket
+wire:poll.15000ms
+wire:poll.15s
+wire:poll.keep-alive
+wire:poll.visible
+wire:ignore
+wire:ignore.self
+wire:stream
+wire:stream.replace
