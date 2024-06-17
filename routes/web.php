@@ -20,3 +20,6 @@ Route::middleware([
 Route::get('/counter', App\Livewire\Counter::class)->name('counter.index');
 //post
 Route::get('/posts', App\Livewire\Posts\CreatePost::class)->name('posts.index');
+
+//multi step form
+Route::view('/registration-success', 'registration-success')->name('registration.success');

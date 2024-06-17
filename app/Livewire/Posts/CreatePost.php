@@ -10,11 +10,14 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\WithoutUrlPagination;
 use Livewire\WithFileUploads;
+use Illuminate\Database\Eloquent\Builder;
 
 class CreatePost extends Component
 {
     use WithPagination, WithoutUrlPagination, WithFileUploads;
     public PostForm $form;
+
+    public string $searchPost = "";
 
     public function mount(Post $post)
     {
@@ -52,9 +55,19 @@ class CreatePost extends Component
     #[Title('Create Post')]
     public function render()
     {
+        $posts = Post::when($this->searchPost !== '', fn (Builder $query) => $query->where('title', 'like', '%' . $this->searchPost . '%'))
+            ->latest()->cursorPaginate(6);
+
         return view('livewire.posts.create-post')->with([
             'author' => Auth::user()->email,
-            'posts' => Post::latest()->cursorPaginate(6)
+            'posts' => $posts
         ]);
+    }
+
+    public function updating($key): void
+    {
+        if ($key === 'searchPost') {
+            $this->resetPage();
+        }
     }
 }

@@ -11,6 +11,8 @@
                 {{-- <x-welcome /> --}}
                 <livewire:user-table />
                 <livewire:posts.create-post />
+                <hr />
+                <livewire:student.multi-step-form />
             </div>
         </div>
     </div>

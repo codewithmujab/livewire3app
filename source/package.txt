@@ -1,0 +1,4 @@
+https://flatpickr.js.org/examples/
+https://livewire-powergrid.com/
+https://livewire.laravel.com/docs/volt
+https://medium.com/@Orpheric_Codeur/how-to-create-a-real-time-search-filter-with-laravel-livewire-f566d36fabad

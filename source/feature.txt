@@ -1,0 +1,10 @@
+1. starterkit jetstream ✅
+2. pagination + insert + delete confirm ✅
+3. upload preview image ✅
+4. chart diagram
+5. multi step form ✅
+6. edit data
+7. SPA wire.navigate ✅
+8. searching data realtime ✅
+9. download excel
+10. download pdf
